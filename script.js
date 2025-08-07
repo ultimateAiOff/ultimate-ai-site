@@ -1,20 +1,8 @@
-const btnEgg = document.getElementById("btn");
 window.addEventListener('load', () => {
   initMobileFeatures()
   setTheme(document.body.classList.contains('dark') ? 'dark' : 'light');
-
-  btnEgg.addEventListener("click", () => {
-    if (window.location.pathname.endsWith("siteevon.html")) {
-  window.location.href = "siteegg.html";
- 
-} else {
-  window.location.href = "siteevon.html";
-  
-}
-
-    
-  });
 });
+
 
 
 
@@ -162,31 +150,21 @@ function setTheme(theme) {
   if (theme === 'dark') {
     body.classList.replace('light', 'dark');
     if (burger) burger.classList.add('dark');
-    if (btnEgg) btnEgg.classList.add('dark');
     localStorage.setItem('evon-theme', 'dark');
     // Appliquer le style sombre au menu mobile s'il existe
-    if (mobileNav && window.location.pathname.endsWith("siteevon.html")) {
+    if (mobileNav) {
       mobileNav.style.background = '#121212';
-      mobileNav.style.boxShadow = '0 8px 30px rgba(0,0,0,0.8)';
-      mobileNav.style.borderBottom = '2px solid #ff6a00';
-    }else if (mobileNav && window.location.pathname.endsWith("siteegg.html")) {
-      mobileNav.style.background = 'linear-gradient(90deg, #1e1b3a, #3a3360)';
       mobileNav.style.boxShadow = '0 8px 30px rgba(0,0,0,0.8)';
       mobileNav.style.borderBottom = '2px solid #ff6a00';
     }
   } else {
     body.classList.replace('dark', 'light');
     if (burger) burger.classList.remove('dark');
-    if (btnEgg) btnEgg.classList.remove('dark');  
     localStorage.setItem('evon-theme', 'light');
     // Appliquer le style clair au menu mobile s'il existe
     const mobileNav = document.querySelector('.mobile-nav');
-    if (mobileNav && window.location.pathname.endsWith("siteevon.html")) {
+    if (mobileNav) {
       mobileNav.style.background = '#e6e6e6';
-      mobileNav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
-      mobileNav.style.borderBottom = 'none';
-    }else if (mobileNav && window.location.pathname.endsWith("siteegg.html")) {
-      mobileNav.style.background = 'linear-gradient(90deg, #667eea, #764ba2)';
       mobileNav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
       mobileNav.style.borderBottom = 'none';
     }
