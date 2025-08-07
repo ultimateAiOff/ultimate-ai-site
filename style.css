@@ -196,3 +196,7 @@ body.dark input[type="radio"]:checked + .theme-option {
   display: inline-block;
   margin-right: 2rem;
 }
+
+.section {
+  scroll-margin-top: 120px;
+}
